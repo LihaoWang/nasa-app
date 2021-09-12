@@ -51,8 +51,12 @@ export default function Home({ data }) {
       </Head>
       <h1>{data.title} </h1>
       <p className="explain">{data.explanation}</p>
-      {colors && (
+      {colors ? (
         <div className="image-wrapper" style={{ backgroundColor: colors[1] }}>
+          <img className="apod-image" src={data.hdurl} />
+        </div>
+      ) : (
+        <div className="image-wrapper">
           <img className="apod-image" src={data.hdurl} />
         </div>
       )}

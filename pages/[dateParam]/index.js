@@ -31,7 +31,7 @@ function PostPage({ data }) {
   const nextDate = getDate(dateParam, 1);
   useEffect(() => {
     const likeStatus = localStorage.getItem(dateParam);
-    console.log(dateParam);
+
     if (likeStatus === "true") {
       setLike(true);
     } else {

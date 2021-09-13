@@ -7,12 +7,11 @@ function Post({ data }) {
   return (
     <div className="container">
       <h2>{dateTitle}</h2>
-      <h1>{data.title} </h1>
-      <p>{data.explanation}</p>
-
       <div className="image-wrapper">
         <img className="apod-image" src={url} />
       </div>
+      <h1>{data.title} </h1>
+      <p>{data.explanation}</p>
     </div>
   );
 }

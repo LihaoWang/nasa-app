@@ -38,6 +38,7 @@ a {
   max-width: 1500px;
   max-height: 800px;
   padding: 1rem 1rem;
+  margin: 15px 0px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -103,7 +104,7 @@ a {
   align-items: center;
   background-color: rgb(239, 239, 239);
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 800px) {
   .container p {
     font-size: 15px;
     width: 90%;
@@ -123,5 +124,8 @@ a {
   .heart-btn {
     font-size: 30px;
     padding: 10px;
+  }
+  .image-wrapper {
+    width: 90%;
   }
 }

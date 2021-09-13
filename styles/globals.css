@@ -1,9 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 a {
@@ -14,10 +14,16 @@ a {
 * {
   box-sizing: border-box;
 }
+.container h2 {
+  margin: 2rem 0 0 0;
+}
+.container h1 {
+  margin: 1rem 0 1rem 0;
+}
 .container {
   height: 100vh;
   min-height: 100vh;
-  padding: 0.5rem 0rem;
+  padding: 0rem 0rem;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -28,7 +34,7 @@ a {
   width: 80%;
   max-width: 1500px;
   max-height: 75vh;
-  padding: 20px 0px;
+  padding: 1rem 1rem;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -42,22 +48,50 @@ a {
   margin: auto;
   border-radius: 10px;
 }
-.like-btn {
+.btn {
   display: flex;
   flex-direction: row;
   justify-content: center;
-
-  width: 150px;
-  padding: 15px;
+  align-items: center;
   cursor: pointer;
-  background-color: rgb(220, 220, 220);
 }
-.like-btn:hover {
-  background-color: aqua;
+.heart-btn {
+  font-size: 30px;
+  background-color: rgb(196, 196, 196);
+  border-radius: 100px;
+  padding: 12px;
 }
+.heart-btn:hover {
+  background-color: black;
+  color: white;
+}
+.navigation-btn {
+  width: 120px;
+  background-color: rgb(196, 196, 196);
+  border-radius: 8px;
+  font-size: 30px;
+}
+.navigation-btn:hover {
+  background-color: black;
+  color: white;
+}
+
 .explain {
   width: 80%;
   max-width: 1500px;
   font-size: 20px;
   margin-top: 0px;
+}
+.nav-btn-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 20px;
+}
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(226, 226, 226);
 }

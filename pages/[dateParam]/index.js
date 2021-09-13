@@ -10,6 +10,8 @@ import {
   AiFillHeart,
   AiOutlineHeart,
 } from "react-icons/ai";
+
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 export async function getServerSideProps(context) {
   const dateKey = context.params.dateParam;
   const api = process.env.NEXT_PUBLIC_API;
@@ -26,9 +28,14 @@ function PostPage({ data }) {
   const router = useRouter();
   const { dateParam } = router.query;
   const [like, setLike] = useState();
+  const now = new Date();
+  const currDate = date.format(now, "YYYY-MM-DD");
 
   const prevDate = getDate(dateParam, -1);
-  const nextDate = getDate(dateParam, 1);
+  let nextDate = getDate(dateParam, 1);
+  if (dateParam == currDate) {
+    nextDate = currDate;
+  }
   useEffect(() => {
     const likeStatus = localStorage.getItem(dateParam);
 
@@ -54,8 +61,8 @@ function PostPage({ data }) {
       <Nav />
       <div className="nav-btn-wrapper">
         <Link href={`/${prevDate}`}>
-          <div className="btn navigation-btn">
-            <AiFillCaretLeft />
+          <div className="btn navigation-btn navigation-btn-left ">
+            <BiChevronLeft />
           </div>
         </Link>
         <div className="btn heart-btn" onClick={onLike}>
@@ -63,7 +70,7 @@ function PostPage({ data }) {
         </div>
         <Link href={`/${nextDate}`}>
           <div className="btn navigation-btn">
-            <AiFillCaretRight />
+            <BiChevronRight />
           </div>
         </Link>
       </div>

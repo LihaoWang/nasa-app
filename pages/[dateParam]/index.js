@@ -4,14 +4,10 @@ import Link from "next/link";
 import date from "date-and-time";
 import Nav from "../../components/Nav";
 import { useRouter } from "next/router";
-import {
-  AiFillCaretLeft,
-  AiFillCaretRight,
-  AiFillHeart,
-  AiOutlineHeart,
-} from "react-icons/ai";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+import Footer from "../../components/Footer";
 export async function getServerSideProps(context) {
   const dateKey = context.params.dateParam;
   const api = process.env.NEXT_PUBLIC_API;
@@ -19,6 +15,11 @@ export async function getServerSideProps(context) {
     `https://api.nasa.gov/planetary/apod?api_key=${api}&date=${dateKey}`
   );
   const data = await res.json();
+  if (data.code === 400) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: { data }, // will be passed to the page component as props
   };
@@ -57,25 +58,27 @@ function PostPage({ data }) {
   }
 
   return (
-    <div className="container">
-      <Nav />
-      <div className="nav-btn-wrapper">
-        <Link href={`/${prevDate}`}>
-          <div className="btn navigation-btn navigation-btn-left ">
-            <BiChevronLeft />
+    <>
+      <div className="container">
+        <Nav />
+        <div className="nav-btn-wrapper">
+          <Link href={`/${prevDate}`}>
+            <div className="btn navigation-btn navigation-btn-left ">
+              <BiChevronLeft />
+            </div>
+          </Link>
+          <div className="btn heart-btn" onClick={onLike}>
+            {like ? <AiFillHeart /> : <AiOutlineHeart />}
           </div>
-        </Link>
-        <div className="btn heart-btn" onClick={onLike}>
-          {like ? <AiFillHeart /> : <AiOutlineHeart />}
+          <Link href={`/${nextDate}`}>
+            <div className="btn navigation-btn">
+              <BiChevronRight />
+            </div>
+          </Link>
         </div>
-        <Link href={`/${nextDate}`}>
-          <div className="btn navigation-btn">
-            <BiChevronRight />
-          </div>
-        </Link>
+        <Post data={data} />
       </div>
-      <Post data={data} />
-    </div>
+    </>
   );
 }
 

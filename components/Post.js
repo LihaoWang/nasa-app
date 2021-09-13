@@ -1,5 +1,6 @@
 import React from "react";
 import date from "date-and-time";
+import Footer from "./Footer";
 function Post({ data }) {
   const url = data.hdurl ? data.hdurl : data.url;
   const parsedDate = date.parse(data.date, "YYYY-MM-DD");
@@ -26,6 +27,7 @@ function Post({ data }) {
       </div>
 
       <p>{data.explanation}</p>
+      <Footer />
     </div>
   );
 }

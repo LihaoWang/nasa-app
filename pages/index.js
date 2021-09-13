@@ -10,7 +10,7 @@ export default function Home() {
   const now = new Date();
   const newDate = date.format(now, "YYYY-MM-DD");
   return (
-    <div className="container">
+    <div className="index-container">
       <Head>
         <title>Spacestagram</title>
         <meta name="description" content="Astronomy Picture of the Day" />

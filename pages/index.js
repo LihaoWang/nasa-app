@@ -2,7 +2,7 @@ import Head from "next/head";
 
 import { useState, useEffect } from "react";
 import date from "date-and-time";
-import Nav from "./components/Nav";
+import Nav from "../components/Nav";
 
 export async function getServerSideProps(context) {
   const now = new Date();

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Post from "../components/Post";
+import Post from "../../components/Post";
 import Link from "next/link";
 import date from "date-and-time";
-import Nav from "../components/Nav";
+import Nav from "../../components/Nav";
 import { useRouter } from "next/router";
 import {
   AiFillCaretLeft,

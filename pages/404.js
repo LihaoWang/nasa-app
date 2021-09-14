@@ -4,7 +4,7 @@ export default function Custom404() {
   return (
     <div className="container">
       <Head>
-        <title>Page doesn't exist</title>
+        <title>Page doesn&apos;t exist</title>
         <meta name="description" content="Page doesn't exist" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

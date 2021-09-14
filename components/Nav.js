@@ -5,7 +5,7 @@ function Nav() {
     <div style={{ width: "100%" }}>
       <div className="nav">
         <Link href="/">
-          <h1>Spacestagram</h1>
+          <h1 style={{ cursor: "pointer" }}>Spacestagram</h1>
         </Link>
       </div>
     </div>

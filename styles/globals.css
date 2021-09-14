@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+:root {
+  --gray-100: #efefef;
+  --gray-200: #c6c6c6;
+  --color-red: #ff5b5b;
+}
+
 html,
 body {
   padding: 0;
@@ -35,7 +41,13 @@ a {
   align-items: center;
   width: 100%;
   position: relative;
-  padding-bottom: 100px;
+}
+.post-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
 }
 
 .index-container {
@@ -76,20 +88,30 @@ a {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  border: none;
+  background-color: white;
 }
 .heart-btn {
   font-size: 30px;
-  background-color: rgb(255, 255, 255);
   border-radius: 100px;
   padding: 12px 30px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-  /* border: 1px solid black; */
-  border: 2px solid rgb(255, 91, 91);
-  color: rgb(255, 91, 91);
 }
-.heart-btn:hover {
-  background-color: rgb(255, 91, 91);
+
+.heart-btn-outlined {
+  color: var(--color-red);
+}
+.heart-btn-full {
+  background-color: var(--color-red);
   color: white;
+}
+.heart-btn-outlined:hover {
+  background-color: var(--color-red);
+  color: white;
+}
+.heart-btn-full:hover {
+  background-color: white;
+  color: var(--color-red);
 }
 .navigation-btn {
   padding: 12px 25px;
@@ -101,8 +123,20 @@ a {
 }
 
 .navigation-btn:hover {
-  background-color: rgb(111, 111, 111);
+  background-color: var(--gray-200);
   color: white;
+}
+.back-btn {
+  font-size: 30px;
+  background-color: #1d2445;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.back-btn:hover {
+  background-color: black;
+  /* color: black; */
 }
 
 .container p {
@@ -123,7 +157,7 @@ a {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: rgb(239, 239, 239);
+  background-color: var(--gray-100);
 }
 .main {
   width: 100%;
@@ -253,6 +287,7 @@ a {
   .navigation-btn {
     width: auto;
     padding: 0px 20px;
+    border-radius: 20px;
     font-size: 25px;
   }
   .heart-btn {
@@ -261,6 +296,15 @@ a {
   }
   .image-wrapper {
     width: 90%;
+  }
+  .main h1 {
+    font-size: 30px;
+  }
+  .main h2 {
+    font-size: 20px;
+  }
+  .cta-btn {
+    font-size: 20px;
   }
   .footer p {
     font-size: 15px;

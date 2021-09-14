@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
-import Footer from "../../components/Footer";
+
 export async function getServerSideProps(context) {
   const dateKey = context.params.dateParam;
   const api = process.env.NEXT_PUBLIC_API;
@@ -29,14 +29,12 @@ function PostPage({ data }) {
   const router = useRouter();
   const { dateParam } = router.query;
   const [like, setLike] = useState();
+
   const now = new Date();
   const currDate = date.format(now, "YYYY-MM-DD");
 
   const prevDate = getDate(dateParam, -1);
   let nextDate = getDate(dateParam, 1);
-  if (dateParam == currDate) {
-    nextDate = currDate;
-  }
   useEffect(() => {
     const likeStatus = localStorage.getItem(dateParam);
 
@@ -47,6 +45,9 @@ function PostPage({ data }) {
     }
   }, []);
 
+  if (dateParam == currDate) {
+    nextDate = currDate;
+  }
   function onLike() {
     if (like === true) {
       localStorage.setItem(dateParam, false);
@@ -63,19 +64,43 @@ function PostPage({ data }) {
         <Nav />
         <div className="nav-btn-wrapper">
           <Link href={`/${prevDate}`}>
-            <div className="btn navigation-btn navigation-btn-left ">
+            <button
+              data-message="go to previous day"
+              className="btn navigation-btn navigation-btn-left "
+            >
               <BiChevronLeft />
-            </div>
+            </button>
           </Link>
-          <div className="btn heart-btn" onClick={onLike}>
-            {like ? <AiFillHeart /> : <AiOutlineHeart />}
-          </div>
-          <Link href={`/${nextDate}`}>
-            <div className="btn navigation-btn">
-              <BiChevronRight />
-            </div>
-          </Link>
+
+          {like ? (
+            <button
+              data-message="unlike this photo"
+              className="btn heart-btn heart-btn-full"
+              onClick={onLike}
+            >
+              <AiFillHeart />
+            </button>
+          ) : (
+            <button
+              data-message="like this photo"
+              className="btn heart-btn heart-btn-outlined"
+              onClick={onLike}
+            >
+              <AiOutlineHeart />
+            </button>
+          )}
+          {dateParam != currDate && (
+            <Link href={`/${nextDate}`}>
+              <button
+                data-message="go to the next day"
+                className="btn navigation-btn"
+              >
+                <BiChevronRight />
+              </button>
+            </Link>
+          )}
         </div>
+
         <Post data={data} />
       </div>
     </>

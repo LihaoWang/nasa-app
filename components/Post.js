@@ -10,7 +10,7 @@ function Post({ data }) {
     video = true;
   }
   return (
-    <div className="container">
+    <div className="post-container">
       <h2>{dateTitle}</h2>
       <h1>{data.title} </h1>
       <div className="image-wrapper">
@@ -22,7 +22,7 @@ function Post({ data }) {
             src={url}
           ></iframe>
         ) : (
-          <img className="apod-image" src={url} />
+          <img className="apod-image" src={url} alt={data.title} />
         )}
       </div>
 

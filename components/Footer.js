@@ -14,6 +14,15 @@ function Footer() {
       <p>
         Created by Leo Wang &copy; 2021{" "}
         <a href="https://api.nasa.gov/">| NASA APOD API</a>
+        <br />
+        Favicon made by{" "}
+        <a href="https://www.freepik.com" title="Freepik">
+          Freepik
+        </a>{" "}
+        from{" "}
+        <a href="https://www.flaticon.com/" title="Flaticon">
+          www.flaticon.com
+        </a>
       </p>
     </div>
   );

@@ -1,8 +1,4 @@
 import Head from "next/head";
-
-import { useState, useEffect } from "react";
-
-import Nav from "../components/Nav";
 import Link from "next/link";
 import date from "date-and-time";
 

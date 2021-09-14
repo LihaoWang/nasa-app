@@ -33,9 +33,9 @@ function PostPage({ data }) {
 
   const now = new Date();
   const currDate = date.format(now, "YYYY-MM-DD");
-
   const prevDate = getDate(dateParam, -1);
-  let nextDate = getDate(dateParam, 1);
+  const nextDate = getDate(dateParam, 1);
+
   useEffect(() => {
     const likeStatus = localStorage.getItem(dateParam);
 
@@ -46,9 +46,6 @@ function PostPage({ data }) {
     }
   }, []);
 
-  if (dateParam == currDate) {
-    nextDate = currDate;
-  }
   function onLike() {
     if (like === true) {
       localStorage.setItem(dateParam, false);

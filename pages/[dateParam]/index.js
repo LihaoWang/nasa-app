@@ -21,6 +21,7 @@ export async function getServerSideProps(context) {
       notFound: true,
     };
   }
+
   return {
     props: { data }, // will be passed to the page component as props
   };
@@ -38,7 +39,6 @@ function PostPage({ data }) {
 
   useEffect(() => {
     const likeStatus = localStorage.getItem(dateParam);
-
     if (likeStatus === "true") {
       setLike(true);
     } else {

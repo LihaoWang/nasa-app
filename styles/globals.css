@@ -286,7 +286,8 @@ a {
   }
 }
 
-@media screen and (max-width: 800px) {
+/* For devices that are less than 768px width */
+@media screen and (max-width: 767.98px) {
   .container p {
     font-size: 18px;
     width: 90%;

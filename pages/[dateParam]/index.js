@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Post from "../../components/Post";
 import Link from "next/link";
-import date from "date-and-time";
 import Nav from "../../components/Nav";
+import Head from "next/head";
+import date from "date-and-time";
 import { useRouter } from "next/router";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
@@ -61,6 +62,11 @@ function PostPage({ data }) {
   return (
     <>
       <div className="container">
+        <Head>
+          <title>{data.title}</title>
+          <meta name="description" content={data.explanation} />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
         <Nav />
         <div className="nav-btn-wrapper">
           <Link href={`/${prevDate}`}>

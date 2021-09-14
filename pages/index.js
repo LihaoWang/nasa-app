@@ -21,11 +21,7 @@ export default function Home() {
         <Link href={`/${newDate}`}>
           <div className="cta-btn btn">
             Explore
-            <span
-              style={{ "margin-left": "5px" }}
-              role="img"
-              aria-label="rocket"
-            >
+            <span style={{ marginLeft: "5px" }} role="img" aria-label="rocket">
               🚀
             </span>
           </div>

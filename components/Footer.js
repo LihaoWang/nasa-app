@@ -7,7 +7,7 @@ function Footer() {
         <a href="https://github.com/LihaoWang">
           <FaGithubAlt />
         </a>
-        <a href="https://github.com/LihaoWang">
+        <a href="https://www.linkedin.com/in/lihaowang98/">
           <FaLinkedin />
         </a>
       </div>

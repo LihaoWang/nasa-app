@@ -13,18 +13,19 @@ function Post({ data }) {
     <div className="post-container">
       <h2>{dateTitle}</h2>
       <h1>{data.title} </h1>
-      <div className="image-wrapper">
-        {video ? (
+
+      {video ? (
+        <div>
           <iframe
-            style={{ margin: "auto" }}
-            width="420"
-            height="315"
+            style={{ margin: "auto", maxWidth: "100%" }}
             src={url}
           ></iframe>
-        ) : (
+        </div>
+      ) : (
+        <div className="image-wrapper">
           <img className="apod-image" src={url} alt={data.title} />
-        )}
-      </div>
+        </div>
+      )}
 
       <p>{data.explanation}</p>
       <Footer />

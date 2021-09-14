@@ -64,9 +64,8 @@ a {
 .image-wrapper {
   background-color: rgb(255, 255, 255);
   width: 80%;
-  height: 700px;
   max-width: 1500px;
-  /* max-height: 700px; */
+  max-height: 700px;
   padding: 1rem 1rem;
   margin: 10px 0px 15px 0px;
   border-radius: 10px;
@@ -298,9 +297,7 @@ a {
     font-size: 25px;
     margin: 10px 20px;
   }
-  .image-wrapper {
-    height: 500px;
-  }
+
   .navigation-btn {
     width: auto;
     padding: 0px 20px;

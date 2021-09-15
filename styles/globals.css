@@ -90,6 +90,7 @@ a {
   cursor: pointer;
   border: none;
   background-color: white;
+  font-family: "Space Grotesk", sans-serif;
 }
 .heart-btn {
   font-size: 30px;

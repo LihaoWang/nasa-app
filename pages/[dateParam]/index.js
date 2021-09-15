@@ -78,6 +78,7 @@ function PostPage({ data }) {
           {like ? (
             <button
               data-message="unlike this photo"
+              aria-label="unlike this photo"
               className="btn heart-btn heart-btn-full"
               onClick={onLike}
             >
@@ -86,6 +87,7 @@ function PostPage({ data }) {
           ) : (
             <button
               data-message="like this photo"
+              aria-label="like this photo"
               className="btn heart-btn heart-btn-outlined"
               onClick={onLike}
             >
@@ -96,6 +98,7 @@ function PostPage({ data }) {
             <Link href={`/${nextDate}`}>
               <button
                 data-message="go to the next day"
+                aria-label="go to the next day"
                 className="btn navigation-btn"
               >
                 <BiChevronRight />

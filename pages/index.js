@@ -19,12 +19,16 @@ export default function Home() {
         <h1>Spacestagram</h1>
         <h2>Daily stunning picture from NASA</h2>
         <Link href={`/${newDate}`}>
-          <div className="cta-btn btn">
+          <button
+            className="cta-btn btn"
+            aria-label="explore"
+            data-message="explore"
+          >
             Explore
             <span style={{ marginLeft: "5px" }} role="img" aria-label="rocket">
               🚀
             </span>
-          </div>
+          </button>
         </Link>
       </div>
     </div>

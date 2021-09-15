@@ -17,7 +17,7 @@ export default function Home() {
       </Head>
       <div className="main">
         <h1>Spacestagram</h1>
-        <h2>Daily stunning photo from NASA</h2>
+        <h2>Daily stunning picture from NASA</h2>
         <Link href={`/${newDate}`}>
           <div className="cta-btn btn">
             Explore

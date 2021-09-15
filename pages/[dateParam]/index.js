@@ -16,7 +16,7 @@ export async function getServerSideProps(context) {
     `https://api.nasa.gov/planetary/apod?api_key=${api}&date=${dateKey}`
   );
   const data = await res.json();
-  if (data.code === 400) {
+  if (data.code === 400 || data.code == 404) {
     return {
       notFound: true,
     };

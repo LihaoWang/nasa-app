@@ -1,6 +1,6 @@
 # Spacestagram
 
-**Demo** : https://stagram.space/
+**Demo** : https://stagram.space/ (deployed on Vercel)
 
 Spacestagram displays stunning space pictures fetched from NASA APOD (Astronomy Picture of the Day) [API](https://api.nasa.gov/). <br/> Additionally, users will be able to like and share the pictures easily.
 

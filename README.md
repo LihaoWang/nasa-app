@@ -1,8 +1,10 @@
 # Spacestagram
 
-**Demo** : https://www.stagram.space/
+**Demo** : https://stagram.space/
 
-Spacestagram displays stunning space pictures fetched from NASA APOD (Astronomy Picture of the Day) [API](https://api.nasa.gov/). <br/> Additionally, users are able to like and share each picture easily.
+Spacestagram displays stunning space pictures fetched from NASA APOD (Astronomy Picture of the Day) [API](https://api.nasa.gov/). <br/> Additionally, users will be able to like and share the pictures easily.
+
+_This project was created for the Shopify Frontend Intern (Winter 2022) Application_
 
 <a href="https://www.stagram.space/"><img src="https://i.loli.net/2021/09/15/8yOMk9D61PNn7im.png" /></a>
 
@@ -17,7 +19,7 @@ Next.js, CSS
 - Landing page with animated svg background
 - Navigate between pictures
 - Like pictures (saved locally in cookie)
-- Unique link for each picture
+- Unique shareable link for each picture
 - Server side rendering with loading animation
 - Customized 404 page for invalid path
 
@@ -52,7 +54,3 @@ Start the server
 To run this project, you will need to add the following environment variables to your .env file
 
 `NEXT_PUBLIC_API`
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)

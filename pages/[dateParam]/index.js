@@ -6,7 +6,6 @@ import Head from "next/head";
 import date from "date-and-time";
 import { useRouter } from "next/router";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
 export async function getServerSideProps(context) {
@@ -69,6 +68,7 @@ function PostPage({ data }) {
           <Link href={`/${prevDate}`}>
             <button
               data-message="go to previous day"
+              aria-label="go to previous day"
               className="btn navigation-btn navigation-btn-left "
             >
               <BiChevronLeft />
